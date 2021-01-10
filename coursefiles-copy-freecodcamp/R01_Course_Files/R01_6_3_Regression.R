@@ -39,13 +39,16 @@ reg1 <- lm(RTEN ~ CONT + INTG + DMNR + DILG + CFMG +
 reg1           # Coefficients only
 summary(reg1)  # Inferential tests
 
+reg2 <- lm(RTEN ~ INTG + DECI + ORAL + DMNR + PHYS,
+           data = USJudgeRatings)
+summary(reg2)
 # MORE SUMMARIES ###########################################
 
 anova(reg1)            # Coefficients w/inferential tests
 coef(reg1)             # Coefficients (same as reg1)
 confint(reg1)          # CI for coefficients
 resid(reg1)            # Residuals case-by-case
-hist(residuals(reg1))  # Histogram of residuals
+hist(residuals(reg2))  # Histogram of residuals
 
 # ADDITIONAL MODELS ########################################
 
