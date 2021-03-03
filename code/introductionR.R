@@ -9,7 +9,9 @@
 # to know the working directory
 getwd()
 
-#setting working directory
+# Select it and Ctrl + Enter
+
+# setting working directory
 setwd("D:/Learning/Statistical Analysis Using R")
 
 # To list all the files and folders in the working directory
@@ -17,6 +19,12 @@ dir()
 
 # to list the variables
 ls()
+
+1 + 2 
+
+# Ctrl + L
+
+# vector 
 
 #numeric
 variable = 1
@@ -35,27 +43,32 @@ typeof(variable)
 #Date operations
 variable1 <- as.Date('2021-01-01')
 variable2 <- as.Date('2021-01-02')
-variable2 - variable1
-variable1 + 1
+variable1 - variable2
+variable3 <- variable1 + 1
 
 # Arithematic operations
+
 variable3 = 1
 variable4 <- 2
-result  <- variable3 + variable4
+result  <- variable3 * variable4
+
 1:10
 list.var <- 1:10
 list.var <- c(1:10)
 list.var <- seq(1,10,2)
 
+vect <- c("A", "B", "C")
+
 # function to check if the number is of numeric or integer class
 is.numeric(1)
 is.integer(1)
+is.double(1)
 is.numeric(1L)
 is.integer(1L)
 
 #list function
-list_var <- list(x= 1:10, y = LETTERS)
-names(list_var) <- "x"
+list_var <- list(1:10, LETTERS)
+names(list_var) <- c("x", "y")
 list_var$x
 list_var["x"]
 list_var
@@ -76,7 +89,9 @@ df <- data.frame(x=1:10, y = letters[1:10], LETTERS[1:10])
 class(df)
 typeof(df)
 
+sum(1:10)
 sum <- sum(1:10)
+
 ?sum
 class(sum)
 rm("sum")
@@ -96,13 +111,15 @@ rep(1:10,each= 10)
 # function for finding mode
 
 # Create the function.
-getmode <- function(value) {
-  uniqv <- unique(value)
-  uniqv[which.max(tabulate(match(value, uniqv)))]
+getmode <- function(list.of.values) {
+  uniqv <- unique(list.of.values)
+  uniqv[which.max(tabulate(match(list.of.values, uniqv)))]
 }
+
 
 fun.name <- function(arg1, arg2) {
   arg1 + arg2 }
+
 fun.name(22,33)
 # Create the vector with numbers.
 list.of.nums <- c(2,1,2,3,1,2,3,4,1,5,5,3,2,3)
@@ -126,7 +143,8 @@ if (num > 0)
 }
   
 # switch statement
-switch(2,sum(1:10), mean(1:10), median(1:10))
+n <- as.integer(readline("Enter choice:"))
+switch(n,sum(1:10), mean(1:10), median(1:10))
 
 #for loop
 for (i in 1:10) {
@@ -153,20 +171,23 @@ col.sum <- apply(mat, 2,FUN = sum)
 x <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
 lapply(x, mean)
 sapply(x, mean)
-vapply(x, mean, 0)
+vapply(x, mean, 1)
 vapply(x, mean, "a")   # it will throw error
 
 # range
 (r.x <- range(stats::rnorm(100)))
 diff(r.x) # the SAMPLE range
+
 installed.packages()
-install.packages("ggplot2")
+install.packages(c("ggplot2", "gganimate"))
+installed.packages()
 
 library(ggplot2)
 require(ggplot2)
 
 library(crantastic)
 require(crantastic)
+
 
 
 # file handling
@@ -201,6 +222,7 @@ help("read.csv")
 citation()
 citation("datasets")
 
-cat("\014") 
+cat("A")
+cat("\014")  # \014 = Ctrl + L 
 ls()
 rm(list = ls())
