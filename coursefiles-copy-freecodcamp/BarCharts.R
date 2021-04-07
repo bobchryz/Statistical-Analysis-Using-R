@@ -14,6 +14,8 @@ head(mtcars)
 
 barplot(mtcars$cyl)             # Doesn't work
 
+dim(mtcars)
+
 # Need a table with frequencies for each category
 cylinders <- table(mtcars$cyl)  # Create table
 barplot(cylinders)              # Bar chart

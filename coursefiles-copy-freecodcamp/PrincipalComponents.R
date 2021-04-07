@@ -26,7 +26,8 @@ head(cars)
 pc <- prcomp(cars,
         center = TRUE,  # Centers means to 0 (optional)
         scale = TRUE)   # Sets unit variance (helpful)
-
+dim(cars)
+summary(pc)
 # To specify variables #####################################
 
 pc <- prcomp(~ mpg + cyl + disp + hp + wt + qsec + am +

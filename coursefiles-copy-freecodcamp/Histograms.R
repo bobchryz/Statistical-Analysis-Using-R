@@ -17,6 +17,7 @@ hist(iris$Sepal.Width)
 hist(iris$Petal.Length)
 hist(iris$Petal.Width)
 
+plot(iris$Petal.Length, iris$Petal.Width)
 # HISTOGRAM BY GROUP #######################################
 
 # Put graphs in 3 rows and 1 column
